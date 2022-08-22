@@ -1,0 +1,2 @@
+/* INSERT INTO clientes (id, nombre, apellidos, email, fecha_registro) VALUES(1, 'Leandro', 'Palma Alvarado', 'leancoder27@gmail.com', '2022-02-27');
+INSERT INTO clientes (id, nombre, apellidos, email, fecha_registro) VALUES(2, 'Martin', 'Palma Alvarado', 'martin@gmail.com', '2022-02-27'); */

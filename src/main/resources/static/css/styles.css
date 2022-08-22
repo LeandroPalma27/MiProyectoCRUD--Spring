@@ -1,0 +1,39 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+}
+
+.home-autor {
+    padding-left: 20px;
+}
+
+header {
+    /* height: 13%; */
+}
+
+.contenedor-principal {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    /* height: 74%; */
+    margin: 10px 0;
+}
+
+.contenedor-principal > .card {
+    width: 85%;
+    padding: 10px 25px;
+    border-radius: 16px;
+}
+
+.alert {
+    margin: 0;
+}

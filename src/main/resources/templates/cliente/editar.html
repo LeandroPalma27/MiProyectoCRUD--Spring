@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head th:replace="layout/layout :: head"></head>
+<body>
+    <link rel="stylesheet" th:href="@{/css/insertar.css}">
+    <link rel="stylesheet" th:href="@{/css/formularios.css}">
+    <div class="main-container">
+        <header th:replace="layout/layout :: header"></header>
+        <div class="container">
+            <h1>Editar cliente</h1>
+            <form th:action="@{/cliente/process-form}" method="post" th:object="${cliente}" class="formulario" enctype="multipart/form-data">
+                <div class="form-content">
+                    <div class="form-group">
+                        <label for="txtDni">Dni</label>
+                        <input type="text" class="form-control" id="txtDni" placeholder="Ingrese su dni" th:field="*{dni}" th:errorclass="'form-control alert-danger'">
+                        <div class="container-error" th:if="${#fields.hasErrors('dni')}">
+                            <p th:errors="*{dni}" class="formulario-error"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" th:field="*{nombre}" th:errorclass="'form-control alert-danger'">
+                        <div class="container-error" th:if="${#fields.hasErrors('nombre')}">
+                            <p th:errors="*{nombre}" class="formulario-error"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtApellidos">Apellidos</label>
+                        <input type="text" class="form-control" id="txtApellidos" placeholder="Ingrese sus apellidos" th:field="*{apellidos}" th:errorclass="'form-control alert-danger'">
+                        <div class="container-error" th:if="${#fields.hasErrors('apellidos')}">
+                            <p th:errors="*{apellidos}" class="formulario-error"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="Ingrese su email" th:field="*{email}" th:errorclass="'form-control alert-danger'">
+                        <div class="container-error" th:if="${#fields.hasErrors('email')}">
+                            <p th:errors="*{email}" class="formulario-error"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a th:href="@{/cliente/listado}" class="btn btn-success">Regresar al listado</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

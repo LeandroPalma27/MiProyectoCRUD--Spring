@@ -1,0 +1,19 @@
+.cliente-titulo {
+    border-bottom: 1px solid rgb(207, 252, 207);
+}
+
+.list-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.find-dni_form form {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.form-input {
+    margin-right: 5px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layout/layout :: head"> </head>
+
+<body>
+    <link rel="stylesheet" th:href="@{/css/detalle.css}">
+    <div class="main-container">
+        <header th:replace="layout/layout :: header"></header>
+        <div class="contenedor-principal">
+            <div class="card">
+                <h1 class="text-success cliente-titulo" th:text="${titulo}"></h1>
+                <div class="container-cliente">
+                    <div class="container-foto">
+                        <p class="url-foto" th:text="${clienteDetalles.urlFoto}"></p>
+                        <img th:if="${clienteDetalles.urlFoto != ''}" class="foto-cliente-exist" src="" alt="foto-cliente">
+                        <img th:if="${clienteDetalles.urlFoto == ''}" class="foto-cliente" th:src="@{/img/NoImageAvailableIcon.png}" alt="foto-cliente">
+                    </div>
+                    <div class="container-detalles">
+                        <h3 th:text="${clienteDetalles.nombre} + ' ' + ${clienteDetalles.apellidos}"></h3>
+                        <div>
+                            <p class="cliente-detalles">Dni:<span th:text="' ' + ${clienteDetalles.dni}"></span></p>
+                            <p class="cliente-detalles">Email:<span th:text="' ' + ${clienteDetalles.email}"></span></p>
+                        </div>
+                        <div>
+                            <a class="btn btn-warning" th:href="@{/cliente/editar/{id}(id=${clienteDetalles.id})}">Editar</a>
+                            <a class="btn btn-success" th:href="@{/cliente/listado}">Regresar al listado</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <td title="detalle"><a class="btn btn-success" th:href="@{/cliente/detalle/{id}(id=${cliente.id})}"><i
+                            class="fa-solid fa-circle-info"></i></a></td>
+                <td><a class="btn btn-warning" th:href="@{/cliente/editar/{id}(id=${cliente.id})}">Editar</a></td>
+                <td><a id="btnEliminar" class="btn btn-danger"
+                        th:href="@{/cliente/eliminar/{id}(id=${cliente.id})}">Eliminar</a></td> -->
+            </div>
+        </div>
+    </div>
+    <footer th:replace="layout/layout :: footer"></footer>
+    <script type="text/javascript" th:src="@{/js/foto-render.js}"></script>
+</body>
+
+</html>
